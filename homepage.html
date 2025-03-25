@@ -7,97 +7,168 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body class="home-page">
-    <header class="site-header">
+    <div class="cursor-follower"></div>
+    <div class="page-transition-overlay"></div>
+    
+    <header class="site-header glass-morphism">
         <div class="header-container">
             <div class="logo">
-                <a href="index.html">NH</a>
+                <a href="index.html" class="logo-text">
+                    <span class="logo-letter">N</span><span class="logo-letter">H</span>
+                </a>
             </div>
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html" class="nav-item active"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="about.html" class="nav-item"><i class="fas fa-user"></i> About</a></li>
-                    <li><a href="skills.html" class="nav-item"><i class="fas fa-code"></i> Skills</a></li>
-                    <li><a href="#contact" class="nav-item"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="index.html" class="nav-item active"><i class="fas fa-home"></i> <span class="nav-text">Home</span></a></li>
+                    <li><a href="about.html" class="nav-item"><i class="fas fa-user"></i> <span class="nav-text">About</span></a></li>
+                    <li><a href="skills.html" class="nav-item"><i class="fas fa-code"></i> <span class="nav-text">Skills</span></a></li>
+                    <li><a href="#contact" class="nav-item"><i class="fas fa-envelope"></i> <span class="nav-text">Contact</span></a></li>
                 </ul>
             </nav>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
         </div>
     </header>
 
     <main class="main-content">
-        <section class="hero-section">
-            <div class="profile-container">
+        <section class="hero-section parallax-section">
+            <div class="particles-background"></div>
+            <div class="profile-container animate__animated animate__fadeIn">
                 <div class="profile-image-wrapper">
-                    <img src="/api/placeholder/200/200" alt="Nazmul Haque" class="profile-image">
-                    <div class="profile-backdrop"></div>
+                    <img src="/api/placeholder/200/200" alt="Nazmul Haque" class="profile-image hover-float">
+                    <div class="profile-backdrop glow-effect"></div>
+                    <div class="profile-ring rotating"></div>
                 </div>
                 <div class="profile-info">
-                    <h1 class="name-title">Nazmul <span class="highlight">Haque</span></h1>
-                    <p class="profession-tag">Aspiring Data Analyst | Software Engineering Student</p>
+                    <h1 class="name-title text-gradient">Nazmul <span class="highlight animated-underline">Haque</span></h1>
+                    <p class="profession-tag typewriter">Aspiring Data Analyst | Software Engineering Student</p>
                     <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon hover-float"><i class="fab fa-github"></i><span class="tooltip">GitHub</span></a>
+                        <a href="#" class="social-icon hover-float"><i class="fab fa-linkedin"></i><span class="tooltip">LinkedIn</span></a>
+                        <a href="#" class="social-icon hover-float"><i class="fab fa-twitter"></i><span class="tooltip">Twitter</span></a>
                     </div>
-                    <a href="#about" class="cta-button">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="#about" class="cta-button pulse-animation">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrow-scroll">
+                    <span></span>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="section-container">
-            <h2 class="section-title">About <span class="highlight">Me</span></h2>
-            <div class="section-content">
-                <p class="about-text">I am an undergraduate student in the Software Engineering department at Daffodil International University. With a passion for data analysis and a background in cybersecurity, I am a bug hunter with a keen interest in technological innovation.</p>
+        <section id="about" class="section-container reveal-section">
+            <div class="section-background-shape"></div>
+            <h2 class="section-title split-text">About <span class="highlight glow-text">Me</span></h2>
+            <div class="section-content glass-card">
+                <p class="about-text fade-in-text">I am an undergraduate student in the Software Engineering department at Daffodil International University. With a passion for data analysis and a background in cybersecurity, I am a bug hunter with a keen interest in technological innovation.</p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number counter">3</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number counter">15</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number counter">25</span>
+                        <span class="stat-label">Bugs Found</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="skills" class="section-container">
-            <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+        <section id="skills" class="section-container reveal-section">
+            <div class="section-background-pattern"></div>
+            <h2 class="section-title split-text">My <span class="highlight glow-text">Skills</span></h2>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fas fa-shield-alt skill-icon"></i>
-                    <h3>Cybersecurity</h3>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="width: 85%"></div>
+                <div class="skill-card glass-morphism tilt-effect">
+                    <div class="skill-icon-wrapper">
+                        <i class="fas fa-shield-alt skill-icon pulse-glow"></i>
                     </div>
+                    <h3 class="skill-title">Cybersecurity</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar gradient-bar" style="width: 85%"><span class="skill-percentage">85%</span></div>
+                    </div>
+                    <ul class="skill-details">
+                        <li>Penetration Testing</li>
+                        <li>Network Security</li>
+                        <li>Security Auditing</li>
+                    </ul>
                 </div>
-                <div class="skill-card">
-                    <i class="fas fa-bug skill-icon"></i>
-                    <h3>Bug Hunting</h3>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="width: 90%"></div>
+                <div class="skill-card glass-morphism tilt-effect">
+                    <div class="skill-icon-wrapper">
+                        <i class="fas fa-bug skill-icon pulse-glow"></i>
                     </div>
+                    <h3 class="skill-title">Bug Hunting</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar gradient-bar" style="width: 90%"><span class="skill-percentage">90%</span></div>
+                    </div>
+                    <ul class="skill-details">
+                        <li>Vulnerability Assessment</li>
+                        <li>Web Application Testing</li>
+                        <li>Bug Bounty Programs</li>
+                    </ul>
                 </div>
-                <div class="skill-card">
-                    <i class="fas fa-laptop-code skill-icon"></i>
-                    <h3>Software Engineering</h3>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="width: 80%"></div>
+                <div class="skill-card glass-morphism tilt-effect">
+                    <div class="skill-icon-wrapper">
+                        <i class="fas fa-laptop-code skill-icon pulse-glow"></i>
                     </div>
+                    <h3 class="skill-title">Software Engineering</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar gradient-bar" style="width: 80%"><span class="skill-percentage">80%</span></div>
+                    </div>
+                    <ul class="skill-details">
+                        <li>Full-Stack Development</li>
+                        <li>Object-Oriented Design</li>
+                        <li>Agile Methodologies</li>
+                    </ul>
                 </div>
-                <div class="skill-card">
-                    <i class="fas fa-chart-line skill-icon"></i>
-                    <h3>Data Analysis</h3>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="width: 75%"></div>
+                <div class="skill-card glass-morphism tilt-effect">
+                    <div class="skill-icon-wrapper">
+                        <i class="fas fa-chart-line skill-icon pulse-glow"></i>
                     </div>
+                    <h3 class="skill-title">Data Analysis</h3>
+                    <div class="skill-level">
+                        <div class="skill-bar gradient-bar" style="width: 75%"><span class="skill-percentage">75%</span></div>
+                    </div>
+                    <ul class="skill-details">
+                        <li>Statistical Analysis</li>
+                        <li>Data Visualization</li>
+                        <li>Machine Learning Basics</li>
+                    </ul>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer glass-morphism">
+        <div class="footer-waves">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
         <div class="footer-content">
-            <p>&copy; 2025 Nazmul Haque. All Rights Reserved.</p>
-            <p class="footer-tagline">Crafted with <i class="fas fa-heart"></i> and code</p>
+            <p class="copyright">&copy; 2025 <span class="highlight">Nazmul Haque</span>. All Rights Reserved.</p>
+            <p class="footer-tagline">Crafted with <i class="fas fa-heart pulse-animation"></i> and <span class="code-text">{ code }</span></p>
             <div class="footer-links">
-                <a href="#" class="footer-link">Privacy Policy</a>
-                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link hover-underline">Privacy Policy</a>
+                <a href="#" class="footer-link hover-underline">Terms of Service</a>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 </body>
 </html>
