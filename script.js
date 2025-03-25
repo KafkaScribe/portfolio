@@ -127,12 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Stylish theme toggle with animation
-const createThemeToggle = () => {
-    // Check if theme toggle already exists
-    if (document.querySelector('.theme-toggle')) {
-        return;
-    }
     
     const themeToggle = document.createElement('button');
     themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
