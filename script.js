@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         root: null,
         rootMargin: '-50px',
         threshold: 0.15
-    };
+    }
 
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Animate skill bars when they come into view
     const skillObserverOptions = {
         threshold: 0.5
-    };
+    }
 
     const skillObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -185,4 +185,4 @@ document.addEventListener('DOMContentLoaded', () => {
             themeToggle.style.transform = 'rotate(0deg)';
         }, 300);
     });
-};
+    
