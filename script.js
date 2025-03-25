@@ -1,16 +1,8 @@
-/**
- * Portfolio Interactive Elements
- * Elegant animations and user experience enhancements
- * @author Nazmul Haque
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling with easing effect for navigation
     const navLinks = document.querySelectorAll('nav a');
     
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            // Only apply smooth scroll to internal links
             if (link.getAttribute('href').startsWith('#')) {
                 e.preventDefault();
                 const targetId = link.getAttribute('href').substring(1);
@@ -18,11 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (targetSection) {
                     window.scrollTo({
-                        top: targetSection.offsetTop - 80, // Offset for header
+                        top: targetSection.offsetTop - 80,
                         behavior: 'smooth'
                     });
                     
-                    // Add active state to clicked nav item
                     navLinks.forEach(navLink => navLink.classList.remove('active'));
                     link.classList.add('active');
                 }
@@ -30,23 +21,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Advanced animations for sections on scroll with staggered effect
     const sectionContainers = document.querySelectorAll('.section-container');
     
     const sectionObserverOptions = {
         root: null,
         rootMargin: '-50px',
         threshold: 0.15
-    }
+    };
 
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                // Add staggered animation delay based on index
                 setTimeout(() => {
                     entry.target.classList.add('section-animate');
                     
-                    // Animate child elements with cascade effect
                     const children = entry.target.querySelectorAll('.skill-card, .contact-card');
                     children.forEach((child, i) => {
                         setTimeout(() => {
@@ -55,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }, index * 100);
                 
-                sectionObserver.unobserve(entry.target); // Only animate once
+                sectionObserver.unobserve(entry.target);
             }
         });
     }, sectionObserverOptions);
@@ -64,22 +52,34 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionObserver.observe(section);
     });
     
-    // Parallax effect for hero section
     const heroSection = document.querySelector('.hero-section');
     if (heroSection) {
         window.addEventListener('scroll', () => {
             const scrollPosition = window.scrollY;
             heroSection.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
+            
+            const profileCard = document.querySelector('.profile-card');
+            if (profileCard) {
+                profileCard.style.transform = `translateY(${scrollPosition * 0.1}px) scale(${1 - scrollPosition * 0.0005})`;
+                profileCard.style.boxShadow = `0 ${5 + scrollPosition * 0.05}px ${10 + scrollPosition * 0.1}px rgba(0, 0, 0, 0.2)`;
+            }
         });
+        
+        const nameTitle = document.querySelector('.name-title');
+        if (nameTitle) {
+            nameTitle.innerHTML = nameTitle.textContent.split('').map(
+                letter => `<span class="animated-letter">${letter}</span>`
+            ).join('');
+            
+            document.querySelectorAll('.animated-letter').forEach((letter, i) => {
+                letter.style.animationDelay = `${i * 0.1}s`;
+            });
+        }
     }
 
-    // Create theme toggle button
-    createThemeToggle();
-
-    // Animate skill bars when they come into view
     const skillObserverOptions = {
         threshold: 0.5
-    }
+    };
 
     const skillObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -97,13 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, skillObserverOptions);
 
-    // Observe the skills section
     const skillsSection = document.querySelector('#skills');
     if (skillsSection) {
         skillObserver.observe(skillsSection);
     }
 
-    // Add active class to navigation items based on scroll position
     const allSections = document.querySelectorAll('section');
     const navItems = document.querySelectorAll('.nav-item');
 
@@ -125,64 +123,42 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    
+    enhanceHomepage();
 });
 
-    
-    const themeToggle = document.createElement('button');
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    themeToggle.classList.add('theme-toggle');
-    themeToggle.setAttribute('aria-label', 'Toggle dark/light mode');
-    themeToggle.setAttribute('title', 'Toggle dark/light mode');
-    
-    // Apply styles
-    Object.assign(themeToggle.style, {
-        position: 'fixed',
-        top: '20px',
-        right: '20px',
-        zIndex: '1000',
-        background: 'linear-gradient(135deg, #4158D0, #C850C0)',
-        color: 'white',
-        border: 'none',
-        borderRadius: '50%',
-        width: '50px',
-        height: '50px',
-        cursor: 'pointer',
-        boxShadow: '0 4px 15px rgba(0, 0, 0, 0.15)',
-        transition: 'all 0.3s ease',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
+const enhanceHomepage = () => {
+    const socialIcons = document.querySelectorAll('.social-icon');
+    socialIcons.forEach((icon, index) => {
+        icon.style.animationDelay = `${index * 0.2}s`;
+        icon.classList.add('bounce-in');
+        
+        icon.addEventListener('mouseenter', () => {
+            icon.classList.add('pulse');
+        });
+        
+        icon.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+                icon.classList.remove('pulse');
+            }, 300);
+        });
     });
     
-    document.body.appendChild(themeToggle);
-    
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-theme');
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        themeToggle.style.background = 'linear-gradient(135deg, #FF8C00, #FF2D00)';
-    }
-    
-    // Theme toggle functionality with animation
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        
-        // Change icon based on theme
-        if (document.body.classList.contains('dark-theme')) {
-            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            themeToggle.style.background = 'linear-gradient(135deg, #FF8C00, #FF2D00)';
-            localStorage.setItem('theme', 'dark');
-        } else {
-            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            themeToggle.style.background = 'linear-gradient(135deg, #4158D0, #C850C0)';
-            localStorage.setItem('theme', 'light');
-        }
-        
-        // Add rotation animation
-        themeToggle.style.transform = 'rotate(360deg)';
-        setTimeout(() => {
-            themeToggle.style.transform = 'rotate(0deg)';
-        }, 300);
+    const sectionTitles = document.querySelectorAll('.section-title');
+    sectionTitles.forEach(title => {
+        title.innerHTML = `<span class="title-underline">${title.textContent}</span>`;
     });
     
+    const skillCards = document.querySelectorAll('.skill-card');
+    skillCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.classList.add('skill-card-hover');
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.classList.remove('skill-card-hover');
+        });
+    });
+    
+    document.body.classList.add('enhanced');
+};
