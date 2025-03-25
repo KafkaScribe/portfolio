@@ -7,179 +7,227 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body class="skills-page">
-    <header class="site-header">
+    <div class="cursor-follower"></div>
+    <div class="page-transition-overlay"></div>
+    
+    <header class="site-header glass-effect">
         <div class="header-container">
             <div class="logo">
-                <a href="index.html">NH</a>
+                <a href="index.html" class="logo-text">
+                    <span class="logo-letter">N</span><span class="logo-letter">H</span>
+                </a>
             </div>
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html" class="nav-item"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="about.html" class="nav-item"><i class="fas fa-user"></i> About</a></li>
-                    <li><a href="skills.html" class="nav-item active"><i class="fas fa-code"></i> Skills</a></li>
-                    <li><a href="#contact" class="nav-item"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="index.html" class="nav-item hover-effect"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                    <li><a href="about.html" class="nav-item hover-effect"><i class="fas fa-user"></i> <span>About</span></a></li>
+                    <li><a href="skills.html" class="nav-item active hover-effect"><i class="fas fa-code"></i> <span>Skills</span></a></li>
+                    <li><a href="#contact" class="nav-item hover-effect"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
                 </ul>
             </nav>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
         </div>
     </header>
 
+    <div class="particle-background"></div>
+
     <main class="main-content">
-        <section id="skills" class="section-container">
-            <h2 class="section-title"><span class="highlight">My</span> Skills</h2>
+        <section id="skills" class="section-container reveal-section">
+            <h2 class="section-title animate__animated animate__fadeIn"><span class="highlight gradient-text">My</span> <span class="text-with-shadow">Skills</span></h2>
             
             <div class="skills-container">
-                <div class="skill-category">
-                    <h3><i class="fas fa-shield-alt"></i> Security</h3>
+                <div class="skill-category glass-card animate__animated animate__fadeInLeft">
+                    <div class="category-header">
+                        <div class="icon-container pulse-effect">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Security</h3>
+                    </div>
                     <ul class="skill-list">
-                        <li>
+                        <li class="skill-item">
                             <span class="skill-name">Bug Hunting</span>
                             <div class="skill-level">
-                                <div class="skill-bar" style="width: 90%"></div>
-                                <span class="skill-percent">90%</span>
+                                <div class="skill-bar gradient-bar" data-percent="90"></div>
+                                <span class="skill-percent counter">90%</span>
                             </div>
                         </li>
-                        <li>
+                        <li class="skill-item">
                             <span class="skill-name">Penetration Testing</span>
                             <div class="skill-level">
-                                <div class="skill-bar" style="width: 85%"></div>
-                                <span class="skill-percent">85%</span>
+                                <div class="skill-bar gradient-bar" data-percent="85"></div>
+                                <span class="skill-percent counter">85%</span>
                             </div>
                         </li>
-                        <li>
+                        <li class="skill-item">
                             <span class="skill-name">Network Security</span>
                             <div class="skill-level">
-                                <div class="skill-bar" style="width: 80%"></div>
-                                <span class="skill-percent">80%</span>
+                                <div class="skill-bar gradient-bar" data-percent="80"></div>
+                                <span class="skill-percent counter">80%</span>
                             </div>
                         </li>
                     </ul>
                 </div>
                 
-                <div class="skill-category">
-                    <h3><i class="fas fa-laptop-code"></i> Development</h3>
+                <div class="skill-category glass-card animate__animated animate__fadeInUp">
+                    <div class="category-header">
+                        <div class="icon-container pulse-effect">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Development</h3>
+                    </div>
                     <ul class="skill-list">
-                        <li>
+                        <li class="skill-item">
                             <span class="skill-name">HTML/CSS</span>
                             <div class="skill-level">
-                                <div class="skill-bar" style="width: 95%"></div>
-                                <span class="skill-percent">95%</span>
+                                <div class="skill-bar gradient-bar" data-percent="95"></div>
+                                <span class="skill-percent counter">95%</span>
                             </div>
                         </li>
-                        <li>
+                        <li class="skill-item">
                             <span class="skill-name">JavaScript</span>
                             <div class="skill-level">
-                                <div class="skill-bar" style="width: 85%"></div>
-                                <span class="skill-percent">85%</span>
+                                <div class="skill-bar gradient-bar" data-percent="85"></div>
+                                <span class="skill-percent counter">85%</span>
                             </div>
                         </li>
-                        <li>
+                        <li class="skill-item">
                             <span class="skill-name">Python</span>
                             <div class="skill-level">
-                                <div class="skill-bar" style="width: 80%"></div>
-                                <span class="skill-percent">80%</span>
+                                <div class="skill-bar gradient-bar" data-percent="80"></div>
+                                <span class="skill-percent counter">80%</span>
                             </div>
                         </li>
                     </ul>
                 </div>
                 
-                <div class="skill-category">
-                    <h3><i class="fas fa-chart-line"></i> Data Analysis</h3>
+                <div class="skill-category glass-card animate__animated animate__fadeInRight">
+                    <div class="category-header">
+                        <div class="icon-container pulse-effect">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Data Analysis</h3>
+                    </div>
                     <ul class="skill-list">
-                        <li>
+                        <li class="skill-item">
                             <span class="skill-name">Data Visualization</span>
                             <div class="skill-level">
-                                <div class="skill-bar" style="width: 85%"></div>
-                                <span class="skill-percent">85%</span>
+                                <div class="skill-bar gradient-bar" data-percent="85"></div>
+                                <span class="skill-percent counter">85%</span>
                             </div>
                         </li>
-                        <li>
+                        <li class="skill-item">
                             <span class="skill-name">Statistical Analysis</span>
                             <div class="skill-level">
-                                <div class="skill-bar" style="width: 75%"></div>
-                                <span class="skill-percent">75%</span>
+                                <div class="skill-bar gradient-bar" data-percent="75"></div>
+                                <span class="skill-percent counter">75%</span>
                             </div>
                         </li>
-                        <li>
+                        <li class="skill-item">
                             <span class="skill-name">SQL</span>
                             <div class="skill-level">
-                                <div class="skill-bar" style="width: 80%"></div>
-                                <span class="skill-percent">80%</span>
+                                <div class="skill-bar gradient-bar" data-percent="80"></div>
+                                <span class="skill-percent counter">80%</span>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="tools-section">
-                <h3 class="tools-title">Tools & Technologies</h3>
+            <div class="tools-section reveal-section">
+                <h3 class="tools-title gradient-text">Tools & Technologies</h3>
                 <div class="tools-grid">
-                    <div class="tool-item">
+                    <div class="tool-item glass-effect hover-float">
                         <i class="fab fa-python"></i>
-                        <span>Python</span>
+                        <span class="tool-name">Python</span>
+                        <div class="tool-glow"></div>
                     </div>
-                    <div class="tool-item">
+                    <div class="tool-item glass-effect hover-float">
                         <i class="fab fa-js"></i>
-                        <span>JavaScript</span>
+                        <span class="tool-name">JavaScript</span>
+                        <div class="tool-glow"></div>
                     </div>
-                    <div class="tool-item">
+                    <div class="tool-item glass-effect hover-float">
                         <i class="fab fa-html5"></i>
-                        <span>HTML5</span>
+                        <span class="tool-name">HTML5</span>
+                        <div class="tool-glow"></div>
                     </div>
-                    <div class="tool-item">
+                    <div class="tool-item glass-effect hover-float">
                         <i class="fab fa-css3-alt"></i>
-                        <span>CSS3</span>
+                        <span class="tool-name">CSS3</span>
+                        <div class="tool-glow"></div>
                     </div>
-                    <div class="tool-item">
+                    <div class="tool-item glass-effect hover-float">
                         <i class="fas fa-database"></i>
-                        <span>SQL</span>
+                        <span class="tool-name">SQL</span>
+                        <div class="tool-glow"></div>
                     </div>
-                    <div class="tool-item">
+                    <div class="tool-item glass-effect hover-float">
                         <i class="fab fa-git-alt"></i>
-                        <span>Git</span>
+                        <span class="tool-name">Git</span>
+                        <div class="tool-glow"></div>
                     </div>
-                    <div class="tool-item">
+                    <div class="tool-item glass-effect hover-float">
                         <i class="fab fa-linux"></i>
-                        <span>Linux</span>
+                        <span class="tool-name">Linux</span>
+                        <div class="tool-glow"></div>
                     </div>
-                    <div class="tool-item">
+                    <div class="tool-item glass-effect hover-float">
                         <i class="fas fa-terminal"></i>
-                        <span>Bash</span>
+                        <span class="tool-name">Bash</span>
+                        <div class="tool-glow"></div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <section id="contact" class="section-container">
-            <h2 class="section-title">Contact <span class="highlight">Me</span></h2>
+        <section id="contact" class="section-container reveal-section">
+            <h2 class="section-title animate__animated animate__fadeIn">Contact <span class="highlight gradient-text">Me</span></h2>
             <div class="contact-cards">
-                <div class="contact-card">
-                    <i class="fas fa-envelope contact-icon"></i>
-                    <h3>Email</h3>
-                    <p><a href="mailto:shafayetislam283@gmail.com">shafayetislam283@gmail.com</a></p>
+                <div class="contact-card glass-card tilt-effect">
+                    <div class="card-glow"></div>
+                    <i class="fas fa-envelope contact-icon pulse-effect"></i>
+                    <h3 class="card-title">Email</h3>
+                    <p><a href="mailto:shafayetislam283@gmail.com" class="contact-link hover-underline">shafayetislam283@gmail.com</a></p>
                 </div>
-                <div class="contact-card">
-                    <i class="fas fa-phone contact-icon"></i>
-                    <h3>Phone</h3>
-                    <p><a href="tel:+8801601933069">01601933069</a></p>
+                <div class="contact-card glass-card tilt-effect">
+                    <div class="card-glow"></div>
+                    <i class="fas fa-phone contact-icon pulse-effect"></i>
+                    <h3 class="card-title">Phone</h3>
+                    <p><a href="tel:+8801601933069" class="contact-link hover-underline">01601933069</a></p>
                 </div>
-                <div class="contact-card">
-                    <i class="fab fa-linkedin contact-icon"></i>
-                    <h3>LinkedIn</h3>
-                    <p><a href="#" target="_blank">Connect with me</a></p>
+                <div class="contact-card glass-card tilt-effect">
+                    <div class="card-glow"></div>
+                    <i class="fab fa-linkedin contact-icon pulse-effect"></i>
+                    <h3 class="card-title">LinkedIn</h3>
+                    <p><a href="#" target="_blank" class="contact-link hover-underline">Connect with me</a></p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer glass-effect">
         <div class="footer-content">
-            <p>&copy; 2024 Nazmul Haque. All Rights Reserved.</p>
-            <p class="footer-tagline">Crafted with <i class="fas fa-heart"></i> and code</p>
+            <p>&copy; 2024 <span class="gradient-text">Nazmul Haque</span>. All Rights Reserved.</p>
+            <p class="footer-tagline">Crafted with <i class="fas fa-heart pulse-effect"></i> and <span class="typewriter" data-text="code"></span></p>
+        </div>
+        <div class="social-links">
+            <a href="#" class="social-icon hover-float"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon hover-float"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon hover-float"><i class="fab fa-twitter"></i></a>
         </div>
     </footer>
 
+    <div class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
 </body>
 </html>
